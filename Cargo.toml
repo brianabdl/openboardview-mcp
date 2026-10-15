@@ -1,0 +1,36 @@
+[package]
+name = "openboardview-mcp"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "MCP server for PCB boardview files, built on OpenBoardView's parsers"
+license = "MIT"
+readme = "README.md"
+keywords = ["mcp", "pcb", "boardview", "openboardview", "electronics"]
+categories = ["command-line-utilities", "parser-implementations"]
+
+[dependencies]
+anyhow = "1.0.104"
+base64 = "0.23.1"
+clap = { version = "4.6.7", features = ["derive", "env"] }
+dirs = "7.0.0"
+font8x8 = "0.3.1"
+libz-sys = { version = "1.1.30", default-features = false, features = ["static", "libc"] }
+rmcp = { version = "3.5.1", features = ["server", "transport-io", "macros"] }
+rusqlite = { version = "0.40.2", features = ["bundled"] }
+schemars = "1.2.3"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+strsim = "0.11.1"
+tiny-skia = "0.12.0"
+tokio = { version = "1.53.3", features = ["macros", "rt-multi-thread", "io-std", "process", "time", "sync", "io-util"] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["env-filter", "fmt"] }
+
+[build-dependencies]
+cc = "1.8.0"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"

@@ -1,0 +1,4 @@
+[submodule "vendor/OpenBoardView"]
+	path = vendor/OpenBoardView
+	url = https://github.com/OpenBoardView/OpenBoardView
+	shallow = true

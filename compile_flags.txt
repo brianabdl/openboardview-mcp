@@ -1,0 +1,7 @@
+-xc++
+-std=c++17
+-DWITH_STD_FILESYSTEM
+-Inative/shim
+-Inative
+-Ivendor/OpenBoardView/src/openboardview
+-Ivendor/OpenBoardView/src
