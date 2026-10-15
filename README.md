@@ -21,7 +21,7 @@ Requirements: Rust 1.88 or newer, a C/C++17 compiler, and git. zlib and SQLite a
 OpenGL is needed.
 
 ```sh
-git clone --recurse-submodules=vendor/OpenBoardView <repo-url> openboardview-mcp
+git clone --recurse-submodules=vendor/OpenBoardView https://github.com/brianabdl/openboardview-mcp.git
 cd openboardview-mcp
 git -C vendor/OpenBoardView submodule update --init --depth 1 src/utf8 src/mpc
 cargo build --release
